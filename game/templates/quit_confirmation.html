@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quit Confirmation</title>
+</head>
+<body>
+    <h1>Quit Game Confirmation</h1>
+    <p>Are you sure you want to quit the game?</p>
+    
+    <form method="post" action="{% url 'quit-game' %}">
+        {% csrf_token %}
+        <button type="submit">Yes, Quit</button>
+    </form>
+
+    <a href="{% url 'board' %}">Cancel</a>
+    <a href="{% url 'resetBoard' %}">Restart Game</a>
+</body>
+</html>
